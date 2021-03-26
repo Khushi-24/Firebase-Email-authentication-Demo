@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -20,6 +21,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+    TextView forgot_password;
     EditText email_id, password;
     private Button login, register;
 
@@ -32,9 +34,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        forgot_password = (TextView) findViewById(R.id.forgotpassword);
+        forgot_password.setOnClickListener(this);
+
         register =(Button) findViewById(R.id.lregister);
         register.setOnClickListener(this);
-
 
         login = (Button) findViewById(R.id.login);
         login.setOnClickListener(this);
@@ -50,10 +54,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.lregister:
-                startActivity(new Intent(getApplicationContext(), RegistrationActivity.class));
+                startActivity(new Intent(this, RegistrationActivity.class));
                 break;
             case R.id.login:
                 userLogin();
+                break;
+            case R.id.forgotpassword:
+                startActivity(new Intent(this, ResetPassword.class ));
                 break;
         }
 
