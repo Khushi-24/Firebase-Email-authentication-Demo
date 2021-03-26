@@ -88,6 +88,7 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
         if(password.length() < 6){
             txtpassword.setError("Min Password length should be 6 characters!");
             txtpassword.requestFocus();
+            return;
         }
 
         progressBar.setVisibility(View.VISIBLE);

@@ -13,6 +13,14 @@
         android:layout_height="200dp"
         android:src="@drawable/group"/>
 
+    <ProgressBar
+        android:id="@+id/lproressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"/>
+
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,6 +29,7 @@
         android:focusableInTouchMode="true">
 
         <EditText
+            android:id="@+id/lemail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -38,6 +47,7 @@
         app:passwordToggleEnabled="true">
 
         <EditText
+            android:id="@+id/lpassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -47,6 +57,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
+        android:id="@+id/login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
@@ -54,12 +65,13 @@
         android:textSize="22sp" />
 
     <Button
+        android:id="@+id/lregister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="13dp"
         android:text="Register"
         android:textSize="22sp"
-        android:onClick="btn_Register_Form"/>
+        />
 
 
 </LinearLayout>
